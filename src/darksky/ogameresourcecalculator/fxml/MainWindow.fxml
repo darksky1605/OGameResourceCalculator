@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="darksky.ogameresourcecalculator.MainWindowController">
+   <children>
+      <TextField fx:id="prodMetInput" layoutX="188.0" layoutY="78.0" text="0" />
+      <TextField fx:id="prodKrisInput" layoutX="373.0" layoutY="78.0" text="0" />
+      <TextField fx:id="prodDeutInput" layoutX="558.0" layoutY="78.0" text="0" />
+      <TextField fx:id="haveMetInput" layoutX="188.0" layoutY="117.0" text="0" />
+      <TextField fx:id="haveKrisInput" layoutX="373.0" layoutY="117.0" text="0" />
+      <TextField fx:id="haveDeutInput" layoutX="558.0" layoutY="117.0" text="0" />
+      <TextField fx:id="wantMetInput" layoutX="188.0" layoutY="155.0" text="0" />
+      <TextField fx:id="wantKrisInput" layoutX="373.0" layoutY="155.0" text="0" />
+      <TextField fx:id="wantDeutInput" layoutX="558.0" layoutY="155.0" text="0" />
+      <StackPane layoutX="373.0" layoutY="274.0">
+         <children>
+            <Button fx:id="calcButton" mnemonicParsing="false" onAction="#calculate" prefHeight="26.0" prefWidth="364.0" text="%btn_go" />
+            <ProgressBar fx:id="calcProgressBar" prefHeight="20.0" prefWidth="364.0" progress="0.0" visible="false" />
+         </children>
+      </StackPane>
+      <TextField fx:id="rateMMInput" layoutX="188.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="3.0" />
+      <TextField fx:id="rateMKInput" layoutX="248.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="2.0" />
+      <TextField fx:id="rateMDInput" layoutX="308.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="1.0" />
+      <TextField fx:id="rateKMInput" layoutX="188.0" layoutY="240.0" prefHeight="26.0" prefWidth="50.0" text="3.0" />
+      <TextField fx:id="rateKKInput" layoutX="248.0" layoutY="240.0" prefHeight="26.0" prefWidth="50.0" text="2.0" />
+      <TextField fx:id="rateKDInput" layoutX="308.0" layoutY="240.0" prefHeight="26.0" prefWidth="50.0" text="1.0" />
+      <TextField fx:id="rateDMInput" layoutX="188.0" layoutY="274.0" prefHeight="26.0" prefWidth="50.0" text="3.0" />
+      <TextField fx:id="rateDKInput" layoutX="248.0" layoutY="274.0" prefHeight="26.0" prefWidth="50.0" text="2.0" />
+      <TextField fx:id="rateDDInput" layoutX="308.0" layoutY="274.0" prefHeight="26.0" prefWidth="50.0" text="1.0" />
+      <Label layoutX="188.0" layoutY="29.0" text="%lbl_metal">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="29.0" text="%lbl_crystal">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="29.0" text="%lbl_deuterium">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="83.0" text="%lbl_dailyproduction" />
+      <Label layoutX="9.0" layoutY="122.0" text="%lbl_current" />
+      <Label layoutX="9.0" layoutY="160.0" text="%lbl_required" />
+      <Label layoutX="9.0" layoutY="212.0" text="%lbl_sellmetrate" />
+      <Label layoutX="9.0" layoutY="245.0" text="%lbl_sellcrysrate" />
+      <Label layoutX="9.0" layoutY="279.0" text="%lbl_selldeutrate" />
+      <TextField fx:id="dayStepInput" layoutX="676.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="1" />
+      <Label layoutX="507.0" layoutY="212.0" text="%lbl_resolutiondays" />
+      <ListView fx:id="profileListView" layoutX="738.0" layoutY="80.0" prefHeight="100.0" prefWidth="150.0" />
+      <Button fx:id="createProfileButton" layoutX="897.0" layoutY="80.0" mnemonicParsing="false" onAction="#createProfile" prefHeight="26.0" prefWidth="90.0" text="%btn_new" />
+      <Button fx:id="deleteProfileButton" layoutX="896.0" layoutY="153.0" mnemonicParsing="false" onAction="#deleteProfile" prefHeight="26.0" prefWidth="90.0" text="%btn_delete" />
+      <Button fx:id="saveInProfileButton" layoutX="896.0" layoutY="117.0" mnemonicParsing="false" onAction="#saveInProfile" prefWidth="90.0" text="%btn_save" />
+      <TextArea fx:id="tradeSummaryArea" editable="false" layoutX="8.0" layoutY="316.0" prefHeight="170.0" prefWidth="730.0" />
+      <CheckBox fx:id="doubleTradeCheckbox" layoutX="507.0" layoutY="244.0" mnemonicParsing="false" text="%cbox_advancedtrade" />
+      <Button fx:id="setResourcesButton" layoutX="104.0" layoutY="155.0" mnemonicParsing="false" onAction="#setResources" text="=" />
+      <Button fx:id="addResourcesButton" layoutX="147.0" layoutY="155.0" mnemonicParsing="false" onAction="#addResources" text="+" />
+   </children>
+</Pane>
