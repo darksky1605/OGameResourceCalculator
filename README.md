@@ -1,24 +1,30 @@
 # OGameResourceCalculator
 
+![Application screenshot](application.png?raw=true "Application")
+
 This is a tool for the browser game OGame. 
 
 It calculates how many days you need to produce resources to met specific resource requirements.
 Resource trades are taken into account. You can specify individual exchange rates for each resource.
 
-How to build: 
+**How to build:**
+
 Use ANT to run the build script
 
-How to run:
+**How to run:**
+
 java -jar ogameresourcecalculator.jar
 
-Possible arguments:
+**Possible arguments:**
+
 --lang=XXX  , where XXX specifies the language. 
 Valid options for XXX: de, en. Default : de
 
 Example: Start english version
 java -jar ogameresourcecalculator.jar --lang=en
 
-How to use:
+**How to use:**
+
 Enter daily production
 Enter resources you already have (optional)
 Enter resources you want to have
