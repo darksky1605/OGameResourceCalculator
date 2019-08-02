@@ -12,23 +12,23 @@ public class CalculatorInput {
 	/**
 	 * daily production
 	 */
-	public final long[] prod = { 0, 0, 0 };
+	public long[] prod = { 0, 0, 0 };
 	/**
 	 * existing resources
 	 */
-	public final long[] have = { 0, 0, 0 };
+	public long[] have = { 0, 0, 0 };
 	/**
 	 * required resources
 	 */
-	public final long[] want = { 0, 0, 0 };
+	public long[] want = { 0, 0, 0 };
 	/**
 	 * exchange rates, normalized
 	 */
-	public final double[][] rates = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+	public double[][] rates = { { 3, 2, 1 }, { 3, 2, 1 }, { 3, 2, 1 } };
 	/**
 	 * exchange rates for using an intermediate resource type, normalized
 	 */
-	public final double[][] ratesdoubletrade;
+	public double[][] ratesdoubletrade;
 
 	/**
 	 * step size for calculation
@@ -44,7 +44,7 @@ public class CalculatorInput {
 		ratesdoubletrade = new double[][] { { 0, rates[0][2] * rates[2][1], rates[0][1] * rates[1][2] },
 				{ rates[1][2] * rates[2][0], 0, rates[1][0] * rates[0][2] },
 				{ rates[2][1] * rates[1][0], rates[2][0] * rates[0][1], 0 } };
-		daySteps = 0.1;
+		daySteps = 0.01;
 		useDoubleTrade = false;
 	}
 

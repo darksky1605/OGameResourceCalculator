@@ -3,25 +3,11 @@ package darksky.ogameresourcecalculator;
 import java.util.Arrays;
 import java.util.Objects;
 
-import javafx.concurrent.Task;
+public class SynchronousCalculator {
 
-/**
- * Calculates the time needed until resource requirements are met
- * 
- * @author ogame.de Dark Sky
- * 
- */
-public class CalculatorTask extends Task<CalculatorOutput> {
-
-	private CalculatorInput input = null;
-
-	public CalculatorTask(CalculatorInput input) {
-		Objects.requireNonNull(input, "CalculatorInput input is null");
-		this.input = input;
-	}
-
-	@Override
-	protected CalculatorOutput call() throws Exception {
+	public CalculatorOutput calc(CalculatorInput input){
+		
+		Objects.requireNonNull(input, "input is null");
 
 		final double[] productionDays = { 0, 0, 0 };
 		final long[] centiTodo = { 0, 0, 0 };
@@ -39,7 +25,6 @@ public class CalculatorTask extends Task<CalculatorOutput> {
 		boolean alreadyDone = true;
 		boolean complete = false;
 		long centiDays = 0;
-		long messageUpdateCounter = 0;
 
 		for (int i = 0; i < 3; i++) {
 			centiTodo[i] = (input.want[i] - input.have[i]) * 100;
@@ -50,15 +35,7 @@ public class CalculatorTask extends Task<CalculatorOutput> {
 		}
 
 
-		this.updateProgress(-1, -1);
-
 		while (!alreadyDone && centiDays >= 0 && !complete) {
-
-			messageUpdateCounter++;
-			if (messageUpdateCounter == 100) {
-				messageUpdateCounter = 0;
-				this.updateMessage("" + centiDays / 100);
-			}
 
 			for (int i = 0; i < 6; i++) {
 				tradeList[i].from = 0;
@@ -261,9 +238,6 @@ public class CalculatorTask extends Task<CalculatorOutput> {
 			}
 		}
 
-		this.updateProgress(1, 1);
-
 		return output;
 	}
-
 }

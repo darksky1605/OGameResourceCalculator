@@ -28,6 +28,9 @@
             <ProgressBar fx:id="calcProgressBar" prefHeight="20.0" prefWidth="364.0" progress="0.0" visible="false" />
          </children>
       </StackPane>
+      <Label layoutX="190.0" layoutY="188.0" text="%lbl_metal" />
+      <Label layoutX="250.0" layoutY="188.0" text="%lbl_crystal" />
+      <Label layoutX="310.0" layoutY="188.0" text="%lbl_deuterium" />
       <TextField fx:id="rateMMInput" layoutX="188.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="3.0" />
       <TextField fx:id="rateMKInput" layoutX="248.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="2.0" />
       <TextField fx:id="rateMDInput" layoutX="308.0" layoutY="207.0" prefHeight="26.0" prefWidth="50.0" text="1.0" />

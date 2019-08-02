@@ -1,6 +1,9 @@
 package darksky.ogameresourcecalculator;
 
 import java.util.Arrays;
+import java.util.Objects;
+
+import darksky.ogameresourcecalculator.OGameUnit.Type;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -121,5 +124,20 @@ public class OGameUnit {
 	public String toString() {
 		return "OGameUnit [id=" + id + ", baseCosts=" + Arrays.toString(baseCosts) + ", factor=" + factor + ", type="
 				+ type + "]";
+	}
+	
+	public static long[] getCosts(OGameUnit u, long level) {
+		Objects.requireNonNull(u, "getCosts OGameUnit is null");
+
+		double[] costs = { 0, 0, 0 };
+		long[] retCosts = { 0, 0, 0 };
+		for (int i = 0; i < 3; i++) {
+			if (u.type == Type.UNIT)
+				costs[i] = u.baseCosts[i] * level;
+			else
+				costs[i] = u.baseCosts[i] * Math.pow(u.factor, Math.max(0, level) - 1);
+			retCosts[i] = Math.max(0, (long) costs[i]);
+		}
+		return retCosts;
 	}
 }
